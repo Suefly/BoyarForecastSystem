@@ -1,0 +1,974 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+{#<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>#}
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<!-- 左侧导航 -->
+<div class="page-wrapper" xmlns="http://www.w3.org/1999/html">
+
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">【日报价格详情】</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="widget-area-2 lorvens-box-shadow">
+                            <h3 class="widget-title">生猪</h3>
+                            <div class="table-div">
+
+            <form method="post" id="daily_price" action="/pig/daily_report/">
+{#            {% csrf_token %}#}
+            <div class="box-body">
+                <div class="form-group" style="margin-left: 300px">
+                    <label>选择日期：</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="iconfont icon-calendar"></i>
+                        </span>
+                        <input type="text" class="form-control" style="width: 40%" id="datepicker" name="day_time">
+                        &nbsp<button type="submit" class="btn btn-info">提交</button>
+                    </div>
+                </div>
+            </div>
+            </form>
+
+            <div class="table-responsive">
+                <p style="margin-top:16px;text-indent:28px" align="center">
+                    <strong><span style="font-family:宋体">华北</span></strong><strong><span style="font-family:&#39;MS Mincho&#39;">､</span></strong><strong><span style="font-family:宋体">东北地区生猪均价</span></strong><strong><span style="font-family:宋体">：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong><strong><span style="font-family:宋体">（单位</span></strong><strong><span style="font-family:宋体">：</span></strong><strong><span style="font-family:宋体">元</span>/kg</strong><strong><span style="font-family:宋体">）</span></strong>
+                </p>
+                <table cellspacing="0" cellpadding="0" align="center">
+                    <thead>
+                        <tr class="firstRow">
+                        <td width="93" valign="top" style="border: 1px solid black; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style="font-family:宋体">日期</span></strong>
+                            </p>
+                        </td>
+                        <td width="63" valign="top" style="border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style="font-family:宋体">辽宁</span></strong>
+                            </p>
+                        </td>
+                        <td width="63" valign="top" style="border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style="font-family:宋体">吉林</span></strong>
+                            </p>
+                        </td>
+                        <td width="69" valign="top" style="border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style="font-family:宋体">黑龙江</span></strong>
+                            </p>
+                        </td>
+                        <td width="57" valign="top" style="border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style="font-family:宋体">北京</span></strong>
+                            </p>
+                        </td>
+                        <td width="64" valign="top" style="border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style="font-family:宋体">天津</span></strong>
+                            </p>
+                        </td>
+                        <td width="63" valign="top" style="border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style="font-family:宋体">河北</span></strong>
+                            </p>
+                        </td>
+                        <td width="63" valign="top" style="border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style="font-family:宋体">山西</span></strong>
+                            </p>
+                        </td>
+                        <td width="63" valign="top" style="border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style="font-family:宋体">内蒙</span></strong>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style=";height:20px">
+                        <td width="93" style="border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; border-image: initial; border-top: none; padding: 0px 7px;" height="20">
+                            <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                                <span>{{ pre_day }}</span>
+                            </p>
+                        </td>
+                            {% for index in price_pre_1 %}
+                        <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black; padding: 0px 7px;" height="20">
+                            <p style="text-align:center;margin-top:5px">
+                                {{ index }}
+                            </p>
+                        </td>
+                            {% endfor %}
+                    </tr>
+                    <tr style=";height:20px">
+                        <td width="93" style="border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; border-image: initial; border-top: none; padding: 0px 7px;" height="20">
+                            <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                                {{ day }} </span>
+                            </p>
+                        </td>
+                            {% for index in price_cur_1 %}
+                        <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black; padding: 0px 7px;" height="20">
+                            <p style="text-align:center;margin-top:5px">
+                                {{ index }}
+                            </p>
+                        </td>
+                            {% endfor %}
+                    </tr>
+                        <tr style=";height:20px">
+                        <td width="93" style="border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; border-image: initial; border-top: none; padding: 0px 7px;" height="12">
+                            <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                                <span style="font-family:宋体">趋势</span>
+                            </p>
+                        </td>
+                            {% for index in qushi_1 %}
+                                <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black; padding: 0px 7px;" height="12">
+                                    <p style="text-align:center;margin-top:5px">
+                                        {% if index > 0 %}
+                                        <strong><span style=";font-family:宋体;color:red">↗</span></strong>
+                                        {% elif index == 0 %}
+                                        <strong><span style=";font-family:宋体;color:black">→</span></strong>
+                                        {% else %}
+                                         <strong><span style=";font-family:宋体;color:#00B050">↘</span></strong>
+                                        {% endif %}
+                                    </p>
+                                </td>
+                            {% endfor %}
+                    </tr>
+                    </thead>
+                </table>
+
+                <p style="margin-top:16px;text-indent:28px" align="center">
+                    <strong><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;华东</span></strong><strong><span style="font-family:&#39;MS Mincho&#39;">､</span></strong><strong><span style="font-family:宋体">西南地区生猪均价</span></strong><strong><span style="font-family:宋体">：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong><strong><span style="font-family:宋体">（单位</span></strong><strong><span style="font-family:宋体">：</span></strong><strong><span style="font-family:宋体">元</span>/kg</strong><strong><span style="font-family:宋体">）</span></strong>
+                </p>
+                <table cellspacing="0" cellpadding="0" align="center">
+            <thead>
+                <tr style=";height:22px" class="firstRow">
+                    <td width="91" valign="top" style="border: 1px solid windowtext; background: rgb(146, 205, 220); padding: 0px 7px;" height="22">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">日期</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;" height="22">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">江苏</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;" height="22">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">浙江</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;" height="22">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">安徽</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;" height="22">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">福建</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;" height="22">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">江西</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;" height="22">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">山东</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;" height="22">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">重庆</span></strong>
+                        </p>
+                    </td>
+                    <td width="66" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;" height="22">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">四川</span></strong>
+                        </p>
+                    </td>
+                </tr>
+                <tr style=";height:12px">
+                    <td width="91" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;" height="12">
+                        <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                            {{ pre_day }}
+                        </p>
+                    </td>
+                    {% for index in price_pre_2 %}
+                    <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; padding: 0px 7px;" height="12">
+                        <p style="text-align:center;margin-top:5px">
+                            {{ index }}
+                        </p>
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr style=";height:12px">
+                    <td width="91" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;" height="12">
+                        <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                            {{ day }}
+                        </p>
+                    </td>
+                    {% for index in price_cur_2%}
+                    <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; padding: 0px 7px;" height="12">
+                        <p style="text-align:center;margin-top:5px">
+                            {{ index }}
+                        </p>
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr style=";height:13px">
+                    <td width="91" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;" height="13">
+                        <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                            <span style="font-family:宋体">趋势</span>
+                        </p>
+                    </td>
+                     {% for index in qushi_2 %}
+                        <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black; padding: 0px 7px;" height="12">
+                            <p style="text-align:center;margin-top:5px">
+                                {% if index > 0 %}
+                                <strong><span style=";font-family:宋体;color:red">↗</span></strong>
+                                {% elif index == 0 %}
+                                <strong><span style=";font-family:宋体;color:black">→</span></strong>
+                                {% else %}
+                                 <strong><span style=";font-family:宋体;color:#00B050">↘</span></strong>
+                                {% endif %}
+                            </p>
+                        </td>
+                    {% endfor %}
+                </tr>
+            </thead>
+        </table>
+                <p style="margin-top:16px;text-indent:28px" align="center">
+                    <strong><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;华中</span></strong><strong><span style="font-family:&#39;MS Mincho&#39;">､</span></strong><strong><span style="font-family:宋体">华南</span></strong><strong><span style="font-family:&#39;MS Mincho&#39;">､</span></strong><strong><span style="font-family:宋体">西北地区生猪均价</span></strong><strong><span style="font-family:宋体">：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong><strong><span style="font-family:宋体">（单位</span></strong><strong><span style="font-family:宋体">：</span></strong><strong><span style="font-family:宋体">元</span>/kg</strong><strong><span style="font-family:宋体">）</span></strong>
+                </p>
+                <table cellspacing="0" cellpadding="0" width="598" align="center">
+            <thead>
+                <tr class="firstRow">
+                    <td width="93" valign="top" style="border: 1px solid windowtext; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">日期</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">河南</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">湖北</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">湖南</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">广东</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">广西</span></strong>
+                        </p>
+                    </td>
+                    <td width="59" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">新疆</span></strong>
+                        </p>
+                    </td>
+                    <td width="68" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">陕西</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">甘肃</span></strong>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="93" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;">
+                        <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                            {{ pre_day }}
+                        </p>
+                    </td>
+                    {% for index in price_pre_3 %}
+                    <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; padding: 0px 7px;">
+                        <p style="text-align:center;margin-top:5px">
+                            {{ index }}
+                        </p>
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td width="93" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;">
+                        <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                            {{ day }}
+                        </p>
+                    </td>
+                    {% for index in price_cur_3 %}
+                    <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; padding: 0px 7px;">
+                        <p style="text-align:center;margin-top:5px">
+                            {{ index }}
+                        </p>
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr style=";height:8px">
+                    <td width="93" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;" height="8">
+                        <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                            <span style="font-family:宋体">趋势</span>
+                        </p>
+                    </td>
+                     {% for index in qushi_3 %}
+                        <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black; padding: 0px 7px;" height="12">
+                            <p style="text-align:center;margin-top:5px">
+                                {% if index > 0 %}
+                                <strong><span style=";font-family:宋体;color:red">↗</span></strong>
+                                {% elif index == 0 %}
+                                <strong><span style=";font-family:宋体;color:black">→</span></strong>
+                                {% else %}
+                                 <strong><span style=";font-family:宋体;color:#00B050">↘</span></strong>
+                                {% endif %}
+                            </p>
+                        </td>
+                    {% endfor %}
+                </tr>
+            </thead>
+        </table>
+                <p style="margin-top:16px;text-indent:28px" align="center">
+                    <strong><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;北方主产区仔猪均价</span></strong><strong><span style="font-family:宋体">：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style="font-family:宋体">（单位</span></strong><strong><span style="font-family:宋体">：</span></strong><strong><span style="font-family:宋体">元</span>/kg</strong><strong><span style="font-family:宋体">）</span></strong>
+                </p>
+                <table cellspacing="0" cellpadding="0" width="599" align="center">
+            <thead>
+                <tr class="firstRow">
+                    <td width="91" valign="top" style="border: 1px solid windowtext; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">日期</span></strong>
+                        </p>
+                    </td>
+                    <td width="63" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">辽宁</span></strong>
+                        </p>
+                    </td>
+                    <td width="64" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">北京</span></strong>
+                        </p>
+                    </td>
+                    <td width="64" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">天津</span></strong>
+                        </p>
+                    </td>
+                    <td width="64" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">河北</span></strong>
+                        </p>
+                    </td>
+                    <td width="64" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">河南</span></strong>
+                        </p>
+                    </td>
+                    <td width="64" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">江苏</span></strong>
+                        </p>
+                    </td>
+                    <td width="64" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">山东</span></strong>
+                        </p>
+                    </td>
+                    <td width="64" valign="top" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                        <p style="text-align:center">
+                            <strong><span style="font-family:宋体">安徽</span></strong>
+                        </p>
+                    </td>
+                </tr>
+                <tr style=";height:19px">
+                    <td width="91" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;" height="19">
+                        <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                            {{ pre_day }}
+                        </p>
+                    </td>
+
+                    {% for index in zizhu_price_pre_4 %}
+                    <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; padding: 0px 7px;" height="19">
+                        <p style="text-align:center;margin-top:5px">
+                            {{ index }}
+                        </p>
+                    </td>
+                    {% endfor %}
+
+                </tr>
+                <tr style=";height:19px">
+                    <td width="91" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;" height="19">
+                        <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                            {{ day }}
+                        </p>
+                    </td>
+                    {% for index in zizhu_price_cur_4 %}
+                    <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; padding: 0px 7px;" height="19">
+                        <p style="text-align:center;margin-top:5px">
+                            {{ index }}
+                        </p>
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr style=";height:19px">
+                    <td width="91" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;" height="19">
+                        <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                            <span style="font-family:宋体">趋势</span>
+                        </p>
+                    </td>
+                    {% for index in qushi_4 %}
+                        <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black; padding: 0px 7px;" height="12">
+                            <p style="text-align:center;margin-top:5px">
+                                {% if index > 0 %}
+                                <strong><span style=";font-family:宋体;color:red">↗</span></strong>
+                                {% elif index == 0 %}
+                                <strong><span style=";font-family:宋体;color:black">→</span></strong>
+                                {% else %}
+                                 <strong><span style=";font-family:宋体;color:#00B050">↘</span></strong>
+                                {% endif %}
+                            </p>
+                        </td>
+                    {% endfor %}
+                </tr>
+            </thead>
+        </table>
+                <p style="margin-top:16px;text-indent:28px" align="center">
+                    <strong><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;南方主产区仔猪均价</span></strong><strong><span style="font-family:宋体">：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style="font-family:宋体">（单位</span></strong><strong><span style="font-family:宋体">：</span></strong><strong><span style="font-family:宋体">元</span>/kg</strong><strong><span style="font-family:宋体">）</span></strong>
+                </p>
+                <table cellspacing="0" cellpadding="0" width="599" align="center">
+                <thead>
+                    <tr class="firstRow">
+                        <td width="91" valign="top" style="border: 1px solid windowtext; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style="font-family:宋体">日期</span></strong>
+                            </p>
+                        </td>
+                        <td width="63" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style=";font-family:宋体">湖北</span></strong>
+                            </p>
+                        </td>
+                        <td width="64" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style=";font-family:宋体">湖南</span></strong>
+                            </p>
+                        </td>
+                        <td width="64" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style=";font-family:宋体">广东</span></strong>
+                            </p>
+                        </td>
+                        <td width="64" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style=";font-family:宋体">广西</span></strong>
+                            </p>
+                        </td>
+                        <td width="64" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style=";font-family:宋体">福建</span></strong>
+                            </p>
+                        </td>
+                        <td width="64" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style=";font-family:宋体">浙江</span></strong>
+                            </p>
+                        </td>
+                        <td width="64" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style=";font-family:宋体">江西</span></strong>
+                            </p>
+                        </td>
+                        <td width="64" style="border-top: 1px solid windowtext; border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-image: initial; border-left: none; background: rgb(146, 205, 220); padding: 0px 7px;">
+                            <p style="text-align:center">
+                                <strong><span style=";font-family:宋体">四川</span></strong>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style=";height:19px">
+                        <td width="91" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;" height="19">
+                            <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                                {{ pre_day }}
+                            </p>
+                        </td>
+                        {% for index in zizhu_price_pre_5 %}
+                        <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; padding: 0px 7px;" height="19">
+                            <p style="text-align:center;margin-top: 5px">
+                                {{ index }}
+                            </p>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    <tr style=";height:19px">
+                        <td width="91" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;" height="19">
+                            <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                               {{ day }}
+                            </p>
+                        </td>
+                        {% for index in zizhu_price_cur_5 %}
+                        <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid windowtext; border-right: 1px solid windowtext; padding: 0px 7px;" height="19">
+                            <p style="text-align:center;margin-top: 5px">
+                                {{ index }}
+                            </p>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    <tr style=";height:19px">
+                        <td width="91" style="border-right: 1px solid windowtext; border-bottom: 1px solid windowtext; border-left: 1px solid windowtext; border-image: initial; border-top: none; padding: 0px 7px;" height="19">
+                            <p style="margin-top:auto;margin-bottom:    auto;text-align:center">
+                                <span style="font-family:宋体">趋势</span>
+                            </p>
+                        </td>
+                     {% for index in qushi_5 %}
+                        <td width="63" style="border-top: none; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black; padding: 0px 7px;" height="12">
+                            <p style="text-align:center;margin-top:5px">
+                                {% if index > 0 %}
+                                <strong><span style=";font-family:宋体;color:red">↗</span></strong>
+                                {% elif index == 0 %}
+                                <strong><span style=";font-family:宋体;color:black">→</span></strong>
+                                {% else %}
+                                 <strong><span style=";font-family:宋体;color:#00B050">↘</span></strong>
+                                {% endif %}
+                            </p>
+                        </td>
+                    {% endfor %}
+                    </tr>
+                </thead>
+            </table>
+                <p style="margin-top:8px;text-indent: 12px" align="center">
+                    <span style="font-size:12px;font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</span><span style="font-size:12px;font-family:宋体">：</span><span style="font-size:12px;font-family:宋体">生猪价格为该省生猪调出大县均价</span><span style="font-size:12px;font-family:宋体">；</span><span style="font-size:12px;font-family:宋体">仔猪价格为育成仔猪均价，体重在</span><span style="font-size:12px">20kg</span><span style="font-size:12px;font-family:宋体">左右</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</section>
+
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">【日报--全国生猪价格分布】</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <h3 class="box-title">折线图</h3>
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="container" style="width: 100%;height: 700px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+
+<script type="text/javascript">
+    $(function() {
+        $('.select2').select2()
+        $(":input").inputmask()
+        $('#daterange').daterangepicker({
+            singleDatePicker: true,
+            locale: {
+                applyLabel: '确定',
+                cancelLabel: '取消',
+                fromLabel: '起始时间',
+                toLabel: '结束时间',
+                customRangeLabel: '自定义',
+                format: 'YYYY-MM-DD',
+                daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+                monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                firstDay: 1
+            }
+        })
+        $('#daterange2').daterangepicker({
+            timePicker: true,
+            timePickerIncrement: 30,
+            locale: {
+                applyLabel: '确定',
+                cancelLabel: '取消',
+                fromLabel: '起始时间',
+                toLabel: '结束时间',
+                customRangeLabel: '自定义',
+                format: 'YYYY-MM-DD',
+                daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+                monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                firstDay: 1
+            }
+        })
+        $('#daterange-btn').daterangepicker({
+            ranges: {
+                '今天': [moment(), moment()],
+                '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                '过去7天': [moment().subtract(6, 'days'), moment()],
+                '过去30天': [moment().subtract(29, 'days'), moment()],
+                '这个月': [moment().startOf('month'), moment().endOf('month')],
+                '上个月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            opens: "right",
+            startDate: moment().subtract(29, 'days'),
+            endDate: moment(),
+            locale: {
+                applyLabel: '确定',
+                cancelLabel: '取消',
+                fromLabel: '起始时间',
+                toLabel: '结束时间',
+                customRangeLabel: '自定义',
+                daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+                monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                firstDay: 1
+            }
+        }, function(start, end) {
+            var startTime = start.format('YYYY-MM-D')
+            var endTime = end.format('YYYY-MM-D')
+            var time = startTime + ' 至 ' + endTime
+            if (start._isValid == false && end._isValid == false) {
+                startTime = ""
+                endTime = ""
+                time = "请选择日期范围"
+            }
+            $('#daterange-btn span').html(time)
+        })
+        $('#datepicker').datepicker({
+            language: 'zh-CN',
+            autoclose: true,
+            todayHighlight: true
+        })
+        $('.input-daterange input').each(function() {
+            $(this).datepicker({
+                language: 'zh-CN',
+                autoclose: true,
+                todayHighlight: true
+            }, 'clearDates');
+        });
+        $('#inline-datepicker').datepicker({
+            language: 'zh-CN',
+            todayHighlight: true
+        }).on('changeDate', function() {
+            $('#inline-datepicker-input').val(
+                $('#inline-datepicker').datepicker('getFormattedDate')
+            );
+        })
+
+
+        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass: 'iradio_minimal-blue'
+        })
+        $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+            checkboxClass: 'icheckbox_minimal-red',
+            radioClass: 'iradio_minimal-red'
+        })
+        $('input[type="checkbox"].flat-green, input[type="radio"].flat-green').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        })
+    })
+    </script>
+
+<script>
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    var weatherIcons = {
+    up: './data/asset/img/arrow-up.png',
+    down: './data/asset/img/arrow-down.png'
+    };
+    var date = "2019年3月15日"
+    option = {
+        title: {
+            text: '全国各地区生猪价格分布图'+date,
+            subtext: '纯属虚构',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        visualMap: {
+            min: 0,
+            max: 1000,
+            left: 'left',
+            top: 'bottom',
+            text: ['高', '低'],
+            calculable: true
+        },
+        toolbox: {
+            show: true,
+            orient: 'vertical',
+            left: 'right',
+            top: 'center',
+            feature: {
+                dataView: {
+                    readOnly: false
+                },
+                saveAsImage: {}
+            }
+        },
+        animation: true,
+        animationDurationUpdate: 1000,
+        animationEasingUpdate: 'cubicInOut',
+        series: [{
+            name: 'aaa',
+            type: 'map',
+            mapType: 'china',
+            roam: true,
+            label: {
+                normal: {
+                    show: true,
+                    formatter: function(params) {
+                        var icon = params.data.value[1] ? 'up' : 'down';
+                        var valueType = params.data.value[1] ? 'valueUp' : 'valueDown';
+                        return params.name +
+                            '：{' + valueType + '|' + params.value + '} {' + icon + '|}';
+                    },
+                    position: 'inside',
+                    backgroundColor: '#fff',
+                    padding: [4, 5],
+                    borderRadius: 3,
+                    borderWidth: 1,
+                    borderColor: 'rgba(0,0,0,0.5)',
+                    color: '#777',
+                    rich: {
+                        valueUp: {
+                            color: '#019D2D',
+                            fontSize: 14
+                        },
+                        valueDown: {
+                            color: 'red',
+                            fontSize: 14
+                        },
+                        up: {
+                            height: 14,
+                            align: 'center',
+                            backgroundColor: {
+                                image: weatherIcons.up
+                            }
+                        },
+                        down: {
+                            height: 14,
+                            align: 'center',
+                            backgroundColor: {
+                                image: weatherIcons.down
+                            }
+                        }
+                    }
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data: [{
+                    name: '北京',
+                    value: randomData()
+                },
+                {
+                    name: '天津',
+                    value: randomData()
+                },
+                {
+                    name: '上海',
+                    value: randomData()
+                },
+                {
+                    name: '重庆',
+                    value: randomData()
+                },
+                {
+                    name: '河北',
+                    value: randomData()
+                },
+                {
+                    name: '河南',
+                    value: randomData()
+                },
+                {
+                    name: '云南',
+                    value: randomData()
+                },
+                {
+                    name: '辽宁',
+                    value: randomData()
+                },
+                {
+                    name: '黑龙江',
+                    value: randomData()
+                },
+                {
+                    name: '湖南',
+                    value: randomData()
+                },
+                {
+                    name: '安徽',
+                    value: randomData()
+                },
+                {
+                    name: '山东',
+                    value: randomData()
+                },
+                {
+                    name: '新疆',
+                    value: randomData()
+                },
+                {
+                    name: '江苏',
+                    value: randomData()
+                },
+                {
+                    name: '浙江',
+                    value: randomData()
+                },
+                {
+                    name: '江西',
+                    value: randomData()
+                },
+                {
+                    name: '湖北',
+                    value: randomData()
+                },
+                {
+                    name: '广西',
+                    value: randomData()
+                },
+                {
+                    name: '甘肃',
+                    value: randomData()
+                },
+                {
+                    name: '山西',
+                    value: randomData()
+                },
+                {
+                    name: '内蒙古',
+                    value: randomData()
+                },
+                {
+                    name: '陕西',
+                    value: randomData()
+                },
+                {
+                    name: '吉林',
+                    value: randomData()
+                },
+                {
+                    name: '福建',
+                    value: randomData()
+                },
+                {
+                    name: '贵州',
+                    value: randomData()
+                },
+                {
+                    name: '广东',
+                    value: randomData()
+                },
+                {
+                    name: '青海',
+                    value: randomData()
+                },
+                {
+                    name: '西藏',
+                    value: randomData()
+                },
+                {
+                    name: '四川',
+                    value: randomData()
+                },
+                {
+                    name: '宁夏',
+                    value: randomData()
+                },
+                {
+                    name: '海南',
+                    value: randomData()
+                },
+                {
+                    name: '台湾',
+                    value: randomData()
+                },
+                {
+                    name: '香港',
+                    value: randomData()
+                },
+                {
+                    name: '澳门',
+                    value: randomData()
+                }
+            ]
+        }]
+    };
+
+
+
+
+    function randomData() {
+        return [Math.round(Math.random() * 1000), Math.random() > 0.6];
+    }
+
+    setTimeout(function() {
+
+        myChart.on('mouseup', function(params) {
+            if (!down) {
+                return;
+            }
+            down = false;
+
+            var e = params.event;
+
+            var geoCoord = myChart.convertFromPixel('series', [e.offsetX, e.offsetY]);
+
+            myChart.setOption({
+                series: [{
+                    center: geoCoord,
+                    zoom: 10,
+                    animationDurationUpdate: 1000,
+                    animationEasingUpdate: 'cubicInOut'
+                }]
+            });
+        });
+
+        var down;
+        myChart.on('mousedown', function() {
+            down = true;
+        });
+        myChart.on('mousemove', function() {
+            down = false;
+        });
+
+    }, 0);
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+
+{% endblock %}
+

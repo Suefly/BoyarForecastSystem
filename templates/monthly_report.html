@@ -1,0 +1,848 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">表1 生猪产品价格、成本、猪粮/料比价  单位：元/kg，元/头</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="box-header" data-trigger="drag">
+                            <p style="text-align:left">
+    <span style=";font-family: 宋体;color:black">单位：元</span><span style=";font-family:&#39;Arial&#39;,sans-serif;color:black">/kg</span><span style=";font-family:宋体;color:black">，元</span><span style=";font-family:&#39;Arial&#39;,sans-serif;color:black">/</span><span style=";font-family:宋体;color:black">头</span>
+</p>
+<table cellspacing="0" cellpadding="0" align="center">
+    <tbody>
+        <tr style=";height:27px" class="firstRow">
+            <td nowrap="" rowspan="2" style="border-top: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-image: initial; border-left: none rgb(0, 0, 0); padding: 0px 4px;" height="27">
+                <p style="text-align:center">
+                    <strong><span style=";font-family:宋体;color:black">项目</span></strong>
+                </p>
+            </td>
+            <td rowspan="2" style="border-top: 1px solid rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px; word-break: break-all;" height="27" width="183">
+                <p style="text-align:center">
+                    <strong><span style=";font-family:宋体;color:black">指标</span></strong>
+                </p>
+            </td>
+            <td nowrap="" colspan="2" style="border-top: 1px solid rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: none rgb(0, 0, 0); padding: 0px 4px; word-break: break-all;" height="27" width="138">
+                <p style="text-align:center">
+                    <strong><span style=";font-family:&#39;Arial&#39;,sans-serif;color:black">2019</span></strong><strong><span style=";font-family:宋体;color:black">年</span></strong>
+                </p>
+            </td>
+            <td style="border-top: 1px solid rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: none rgb(0, 0, 0); padding: 0px 4px;" height="27" width="66">
+                <p style="text-align:center">
+                    <strong><span style=";font-family:&#39;Arial&#39;,sans-serif;color:black">2018</span></strong><strong><span style=";font-family:宋体;color:black">年</span></strong>
+                </p>
+            </td>
+            <td nowrap="" rowspan="2" style="border-top: 1px solid rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: none rgb(0, 0, 0); padding: 0px 4px;" height="27" width="82">
+                <p style="text-align:center">
+                    <strong><span style=";font-family:宋体;color:black">环比</span></strong>
+                </p>
+            </td>
+            <td nowrap="" rowspan="2" style="border-top: 1px solid rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: none rgb(0, 0, 0); padding: 0px 4px; word-break: break-all;" height="27" width="83">
+                <p style="text-align:center">
+                    <strong><span style=";font-family:宋体;color:black">同比</span></strong>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:30px">
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30">
+                <p style="text-align:center">
+                    <strong><span style=";font-family:&#39;Arial&#39;,sans-serif;color:black">2</span></strong><strong><span style=";font-family:宋体;color:black">月</span></strong>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30" width="66">
+                <p style="text-align:center">
+                    <strong><span style=";font-family:&#39;Arial&#39;,sans-serif;color:black">1</span></strong><strong><span style=";font-family:宋体;color:black">月</span></strong>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30" width="45">
+                <p style="text-align:center">
+                    <strong><span style=";font-family:&#39;Arial&#39;,sans-serif;color:black">2</span></strong><strong><span style=";font-family:宋体;color:black">月</span></strong>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td nowrap="" rowspan="5" style="border-top: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">一、市场价格</span>
+                </p>
+            </td>
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="66">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">活猪</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="41">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">12.34 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="69">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">12.15 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; word-break: break-all; border-color: rgb(0, 0, 0);" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">13.57 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="68">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">1.56%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0); word-break: break-all;" height="28" width="69">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-9.06%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:30px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">仔猪</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">20.98 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="45">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">20.31 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">28.00 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">3.30%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-25.07%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:30px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">白条猪</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">16.28 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">16.50 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">19.44 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-1.33%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-16.26%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">猪肉</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">18.31 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">19.15 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">24.54 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-4.39%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-25.39%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:30px">
+            <td style="border-top: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">二元母猪</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">27.37 </span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">25.68 </span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">32.15 </span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">6.58%</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-14.87%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td nowrap="" rowspan="8" style="border-top: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">二、生产成本</span>
+                </p>
+            </td>
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="66">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">玉米</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="41">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">1.84 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="69">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">1.87 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0); word-break: break-all;" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">1.83 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-1.87%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="83">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">0.55%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:30px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">豆粕</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">2.69 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">2.89 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">2.96 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-6.82%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#33CC33">-9.15%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">育肥猪配合料</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">2.51 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">2.65 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">2.69 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-5.34%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#33CC33">-6.41%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:30px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">仔猪成本</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">476.32 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">485.81 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">658.32 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-1.95%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-27.65%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">饲料成本</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">793.65 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">811.36 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">798.68 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-2.18%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#33CC33">-0.63%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:30px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">当期外购出栏生猪总成本</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">1408.13 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">1435.89 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">1608.24 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-1.93%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-12.44%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:30px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">仔猪成本占生猪总成本比重</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">33.83%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">33.83%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">40.93%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-0.01%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-7.11%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">饲料成本占生猪总成本比重</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">56.36%</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">56.51%</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">49.66%</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-0.14%</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">6.70%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:30px">
+            <td nowrap="" rowspan="6" style="border-top: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">三、效益指标</span>
+                </p>
+            </td>
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="30" width="66">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">猪粮比价</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="41">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">6.71 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="69">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">6.49 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">7.42 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">3.50%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="30" width="83">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-9.56%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">猪料比价</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">4.91 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">4.58 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">5.05 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">7.30%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-2.84%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">仔猪毛利</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">-81.01</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">-91.67</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">93.41 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">11.63%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-186.73%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">外购仔猪养殖出栏盈利</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">39.13</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">-9.92</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">0.55 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">494.56%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">6981.95%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">自繁自养出栏盈利</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">-16.94</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">-50.69 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">57.31 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">66.58%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-129.56%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">屠宰毛利</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">34.63</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">153.18</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">197.02</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-77.39%</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-82.42%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td rowspan="4" style="border-top: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p>
+                    <span style=";font-family:宋体;color:black">四、替代品价格</span>
+                </p>
+            </td>
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="66">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">牛肉</span>
+                </p>
+            </td>
+            <td nowrap="" style="border: none rgb(0, 0, 0); padding: 0px 4px;" height="28" width="41">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">69.71 </span>
+                </p>
+            </td>
+            <td nowrap="" style="border: none rgb(0, 0, 0); padding: 0px 4px;" height="28" width="69">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">69.25 </span>
+                </p>
+            </td>
+            <td nowrap="" style="border: none rgb(0, 0, 0); padding: 0px 4px;" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">66.31 </span>
+                </p>
+            </td>
+            <td nowrap="" style="border: none rgb(0, 0, 0); padding: 0px 4px;" height="28" width="69">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">0.66%</span>
+                </p>
+            </td>
+            <td nowrap="" style="border: none rgb(0, 0, 0); padding: 0px 4px;" height="28" width="77">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">5.13%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">羊肉</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">70.58 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">69.92 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">63.12 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">0.94%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">11.82%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-bottom: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">鸡肉综合售价</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">11.45 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="43">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">11.83 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif">9.91 </span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-3.21%</span>
+                </p>
+            </td>
+            <td nowrap="" style="padding: 0px 4px; border-color: rgb(0, 0, 0);" height="28" width="50">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:red">15.54%</span>
+                </p>
+            </td>
+        </tr>
+        <tr style=";height:28px">
+            <td style="border-top: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28">
+                <p style="text-align:center">
+                    <span style=";font-family:宋体;color:black">鸡蛋零售价</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="66">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">6.28 </span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="42">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">8.64 </span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="70">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:black">8.60 </span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="37">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-27.31%</span>
+                </p>
+            </td>
+            <td nowrap="" style="border-top: none rgb(0, 0, 0); border-right: none rgb(0, 0, 0); border-left: none rgb(0, 0, 0); border-image: initial; border-bottom: 1px solid rgb(0, 0, 0); padding: 0px 4px;" height="28" width="49">
+                <p style="text-align:center">
+                    <span style="font-size:15px;font-family:&#39;Arial&#39;,sans-serif;color:#00B050">-26.98%</span>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="text-align:left;text-indent:0">
+    <span style="font-size:15px;line-height:150%">数据来源：博亚和讯</span>
+</p>
+<p style="text-align:left;text-indent:0">
+    <strong><span style="font-size:15px;line-height:150%">备注：生猪盈利与成本计算，每头猪出栏体重统一校正为</span></strong><strong><span style="font-size:15px;line-height:150%;font-family:&#39;Arial&#39;,sans-serif">115kg</span></strong><strong><span style="font-size:15px;line-height:150%">。</span></strong>
+</p>
+<p>
+    <br/>
+</p>
+                        </div>
+                        <div>
+{#                            <div id="pig_profit" style="width: 100%;height: 550px;"></div>#}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </section>
+</div>
+
+{% endblock %}

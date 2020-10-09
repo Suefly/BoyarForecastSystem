@@ -1,0 +1,469 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图3 2016-2019年（2月）能繁母猪与生猪存栏量变化</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图4 2016-2019年（2月）生猪和能繁母猪存栏量同比变化</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="area_weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图5 2015-2019年（2月）二元母猪价格与销售体重</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="area_weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图6 2016-2019（2月）仔猪供应量及同比变化</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="area_weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图7 2016-2019（2月）仔猪供应量及价格变化</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="area_weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图8 2016-2019（2月）生猪出栏量及猪肉产量</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="area_weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图9 2016-2019年（2月）监测点生猪月度平均出栏体重</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="area_weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图10 2016-2019年（1月）冷鲜冻猪肉进出口量</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="area_weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图11 2016-2019年（1月）活猪出口量与出口金额</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="area_weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图12 2016-2019年（2月）我国生猪价格走势和供需缺口</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="area_weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div class="page-wrapper">
+    <section class="page-body">
+        <div class="row widget">
+            <section class="col-md-10 col-sm-12 col-xs-12">
+                <div class="box form">
+                    <div class="box-header">
+                        <h3 class="box-title">图13 2017-2019年（2月）我国白条猪价格走势</h3>
+                    </div>
+                    <div class="box chart">
+                        <div class="box-header" data-trigger="drag">
+                            <div class="box-tools pull-right">
+                                <button class="" type="button" data-toggle="collapse">
+                                    <i class="iconfont icon-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="area_weekly_price" style="width: 100%;height: 550px;"></div>
+							</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+
+<script>
+    var shengzhu = {{ shengzhu | safe }}
+    var zizhu = {{ zizhu | safe }}
+    var baitiao = {{ baitiao | safe }}
+    var muzhu = {{ muzhu | safe }}
+    var zhurou = {{ zhurou | safe }}
+    var date_list ={{ date_list | safe }}
+        {#alert(date_list)#}
+    Highcharts.chart('weekly_price', {
+        title: {
+            text: '2010-2018我国生猪产品价格走势'
+        },
+        subtitle: {
+            text: document.ontouchstart === undefined ?
+            '鼠标拖动可以进行缩放' : '手势操作进行缩放'
+        },
+        subtitle: {
+            text: '数据来源：博亚和讯'
+        },
+        credits: {
+              enabled:false
+        },
+        chart: {
+            type: 'line',
+            backgroundColor: '',
+            plotBackgroundImage: '/static/image/bg.png',
+            zoomType: 'x'
+        },
+        xAxis: {
+            categories: date_list,
+            crosshair: true,
+            labels: {
+                rotation: 90,
+                }
+        },
+        yAxis: {
+            title: {
+                text: '生猪产品价格，元/kg'
+            }
+        },
+        legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+        },
+
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                {#pointStart: 2010#}
+            }
+        },
+
+        series: [{
+            name: '生猪价格',
+            data: shengzhu
+        }, {
+            name: '白条猪价格',
+            data: baitiao
+        }, {
+            name: '仔猪价格',
+            data: zizhu
+        }, {
+            name: '猪肉价格',
+            data: zhurou
+        }, {
+            name: '二元母猪',
+            data: muzhu
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 1000
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+</script>
+<script>
+    var shengzhu = {{ shengzhu | safe }}
+    var zizhu = {{ zizhu | safe }}
+    var baitiao = {{ baitiao | safe }}
+    var muzhu = {{ muzhu | safe }}
+    var zhurou = {{ zhurou | safe }}
+    var date_list ={{ date_list | safe }}
+        {#alert(date_list)#}
+    Highcharts.chart('area_weekly_price', {
+        title: {
+            text: '2010-2018我国生猪产品价格走势'
+        },
+        subtitle: {
+            text: document.ontouchstart === undefined ?
+            '鼠标拖动可以进行缩放' : '手势操作进行缩放'
+        },
+        subtitle: {
+            text: '数据来源：博亚和讯'
+        },
+        credits: {
+              enabled:false
+        },
+        chart: {
+            type: 'line',
+            backgroundColor: '',
+            plotBackgroundImage: '/static/image/bg.png',
+            zoomType: 'x'
+        },
+        xAxis: {
+            categories: date_list,
+            crosshair: true,
+            labels: {
+                rotation: 90,
+                }
+        },
+        yAxis: {
+            title: {
+                text: '生猪产品价格，元/kg'
+            }
+        },
+        legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+        },
+
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                {#pointStart: 2010#}
+            }
+        },
+
+        series: [{
+            name: '生猪价格',
+            data: shengzhu
+        }, {
+            name: '白条猪价格',
+            data: baitiao
+        }, {
+            name: '仔猪价格',
+            data: zizhu
+        }, {
+            name: '猪肉价格',
+            data: zhurou
+        }, {
+            name: '二元母猪',
+            data: muzhu
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 1000
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+</script>
+{% endblock %}

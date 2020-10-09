@@ -1,0 +1,100 @@
+{% extends 'base_huangji.html' %}
+{% block content %}
+{% load staticfiles %}
+{% load pagination_tags %}
+
+
+<div class="x-body">
+  <form class="layui-form" method="post" action="/baiyu/add_qzhy/{{ qzhy_info.id }}/edit/">
+      {% csrf_token %}
+
+      <div>
+            <label for="qzhyflag" class="layui-form-label" style="width: 180px;">
+                <span class="x-red">*</span>是否强制换羽
+            </label>
+            <div>
+              <input type="checkbox" name="qzhyflag" lay-skin="switch" title="开关" style="width: 50px;height: 24px" {% if qzhy_info.qzhyFlag == 1%} checked {% endif %} >
+            </div>
+      </div>
+
+
+    <div class="layui-form-item">
+        <label for="qzhyRate" class="layui-form-label" style="width: 180px;"> <span class="x-red">*</span>强制换羽比例（%） </label>
+        <div class="layui-input-inline">
+            <input type="text" id="qzhyRate" name="qzhyRate" value="{{ qzhy_info.huanyuRate }}" required lay-verify="qzhyRate" autocomplete="off" class="layui-input">
+        </div>
+       <div class="layui-form-mid layui-word-aux"> <span class="x-red">*</span>强制换羽比例，换羽鸡占该批次鸡总数的百分比（%）</div>
+    </div>
+
+
+    <div class="layui-form-item">
+       <label for="qzhyStartWeek" class="layui-form-label" style="width: 180px;"> <span class="x-red">*</span>换羽开始周</label>
+       <div class="layui-input-inline">
+         <input type="text" id="qzhyStartWeek" name="qzhyStartWeek" value="{{ qzhy_info.qzhyStartWeek }}" required lay-verify="qzhyStartWeek" autocomplete="off" class="layui-input">
+       </div>
+       <div class="layui-form-mid layui-word-aux">该批次鸡从第几周开始强制换羽，单位：周</div>
+    </div>
+
+
+  <div class="layui-form-item">
+       <label for="HuanyuInterval" class="layui-form-label" style="width: 180px;"> <span class="x-red">*</span>换羽到开始产蛋间隙</label>
+       <div class="layui-input-inline">
+         <input type="text" id="HuanyuInterval" name="HuanyuInterval" value="{{ qzhy_info.HuanyuInterval }}" required lay-verify="qzhyStartWeek" autocomplete="off" class="layui-input">
+       </div>
+       <div class="layui-form-mid layui-word-aux">换羽到开始产蛋间的周数，单位：周</div>
+    </div>
+
+   <div class="layui-form-item">
+       <label for="qzhyTime" class="layui-form-label" style="width: 180px;"> <span class="x-red">*</span>换羽后延续周期</label>
+       <div class="layui-input-inline">
+         <input type="text" id="qzhyTime" name="qzhyTime" value="{{ qzhy_info.qzhyPeriod }}" required lay-verify="qzhyTime" autocomplete="off" class="layui-input">
+       </div>
+       <div class="layui-form-mid layui-word-aux">换羽后持续多少周彻底淘汰，单位：周</div>
+    </div>
+
+    <div class="layui-form-item">
+       <label for="remark" class="layui-form-label" style="width: 180px;">备注 </label>
+       <div class="layui-input-inline">
+          <input type="text" id="remark" name="remark" value="{{ qzhy_info.Remark }}" lay-verify="remark" autocomplete="off" class="layui-input">
+       </div>
+        <div class="layui-form-mid layui-word-aux">备注信息</div>
+    </div>
+
+    <div class="layui-form-item">
+       <label for="L_repass" class="layui-form-label" style="width: 180px;"> </label>
+       <button  class="layui-btn" lay-filter="add" lay-submit=""> 增加 </button>
+       <a  href="/baiyu/show_progenitor_introduced/" class="layui-btn" lay-filter="add"> 取消 </a>
+    </div>
+
+  </form>
+</div>
+
+
+<script src="/static/libs/layui/layui.js" charset="utf-8"></script>
+<script src="/static/js/x-layui.js" charset="utf-8"></script>
+<script>
+            layui.use(['form','layer'], function(){
+                $ = layui.jquery;
+              var form = layui.form()
+              ,layer = layui.layer;
+
+              //自定义验证规则
+              form.verify({
+                nikename: function(value){
+                  if(value.length < 5){
+                    return '昵称至少得5个字符啊';
+                  }
+                }
+                ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+                ,repass: function(value){
+                    if($('#L_pass').val()!=$('#L_repass').val()){
+                        return '两次密码不一致';
+                    }
+                }
+              });
+
+
+
+            });
+</script>
+{% endblock %}

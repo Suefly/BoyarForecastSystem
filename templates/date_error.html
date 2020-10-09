@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+
+<div class="skin-default" id="wrapper">
+    <!-- 左侧导航 -->
+    <div class="page-wrapper">
+        <section class="page-body">
+            <div class="error-page">
+                <h1 class="error-icon">
+                    <i class="iconfont icon-404"></i>
+                </h1>
+                <div class="error-body">
+                    <p class="error-notity text-center">
+                        真糟糕, 没有<a style="color: red">{{ dt }}</a> 当日的数据，请确认后再输入！
+                    </p>
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="搜索">
+                        <div class="input-group-btn">
+                        <button type="submit" name="submit" class="btn btn-warning">
+                            <i class="iconfont icon-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock %}
