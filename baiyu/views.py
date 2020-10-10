@@ -16,6 +16,7 @@ from io import BytesIO
 import time
 import xlrd
 import logging
+from login.views import check_login
 
 
 # Create your views here.
@@ -23,14 +24,16 @@ import logging
 num_progress = 0
 logger = logging.getLogger('django')
 
+@check_login
 def index(request):
-    return render(request,'index.html')
+    return render(request, 'index.html')
 
 
 '''
 #渲染接口，展示祖代引种入舍总量
 #by sujie 2019/05/27
 '''
+@check_login
 def show_progenitor_introduced(request):
     content = {
         'introduced_info':get_introduced_detail_info(1,1),

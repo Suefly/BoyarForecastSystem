@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'huangji.apps.HuangjiConfig',
     'danji.apps.DanjiConfig',
     'dj_pagination',
+    'login.apps.LoginConfig'
 ]
 
 
@@ -73,7 +74,8 @@ TEMPLATES = [
                  os.path.join(BASE_DIR, 'templates/baiyu'),
                  os.path.join(BASE_DIR, 'templates/rouya'),
                  os.path.join(BASE_DIR, 'templates/huangji'),
-                 os.path.join(BASE_DIR, 'templates/danji'),]
+                 os.path.join(BASE_DIR, 'templates/danji'),
+                 os.path.join(BASE_DIR, 'templates/login')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {

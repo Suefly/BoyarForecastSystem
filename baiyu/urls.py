@@ -16,8 +16,10 @@ Including another URLconf
 # from django.contrib import admin
 from django.urls import path,re_path
 from baiyu import views as baiyu
+import login.views as login
 urlpatterns = [
     # path('index/',baiyu.index,name='index'),
+    path('logout/',login.logout,name='logout'),
     path('show_date_template/',baiyu.index,name='show_date_template'),
     path('zudai_statistics/',baiyu.zudai_statistics,name='zudai_statistics'),
     path('parent_statistics/',baiyu.parent_statistics,name='parent_statistics'),
@@ -78,7 +80,6 @@ urlpatterns = [
     path('fmdai_correct_salerate/', baiyu.fmdai_correct_salerate, name='fmdai_correct_salerate'),
     path('tongji_detail/',baiyu.tongji_detail,name='tongji_detail'),
     path('yearly_tongji_detail/',baiyu.yearly_tongji_detail,name='yearly_tongji_detail')
-
 ]
 
 

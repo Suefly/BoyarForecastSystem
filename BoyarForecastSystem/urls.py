@@ -19,10 +19,11 @@ from baiyu import views as baiyu
 from rouya import views as rouya
 from django.urls import path,include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+import login.views as login
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',baiyu.index),
+    path('login/',login.login,name='login'),
     path(r'baiyu/',include('baiyu.urls')),
     path(r'rouya/',include('rouya.urls')),
     path(r'huangji/',include('huangji.urls')),
