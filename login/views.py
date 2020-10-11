@@ -38,8 +38,9 @@ def login(request):
         pwd = encrypt(password)
         print(username,password,next_url,pwd)
         # 对用户进行验证，假设用户名为：aaa, 密码为123
-
-        obj = User.objects.filter(username=username).first()
+        obj = authenticate(username=username,password=password)
+        # print('auth_res',auth_res)
+        # obj = User.objects.filter(username=username).first()
         print('obj',obj)
         if obj:
             # 执行其他逻辑操作，例如保存用户信息到数据库等
