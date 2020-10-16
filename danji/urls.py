@@ -27,7 +27,6 @@ urlpatterns = [
     path('fmdai_all_param/',danji.show_fumudai_allParam,name='fmdai_all_param_danji'),
     path('danjiYearTtjirouParam/<int:bird_type>/<int:nGen>/',danji.show_yearly_taotaijirou_param,name='danjiYearTtjirouParam'),
     path('add_whole_param/',danji.add_whole_param,name='add_whole_param_danji'),
-
 ]
 
 
