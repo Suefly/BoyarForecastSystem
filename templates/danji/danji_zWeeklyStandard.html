@@ -7,33 +7,14 @@
 <div class="x-nav">
     <span class="layui-breadcrumb">
       <a><cite>首页</cite></a>
-      <a><cite>会员管理</cite></a>
-      <a><cite>会员列表</cite></a>
+      <a><cite>周度标准参数</cite></a>
+      <a><cite>父母代参数</cite></a>
     </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
 </div>
 <div class="x-body">
-    <form class="layui-form x-center" action="" style="width:800px">
-        <div class="layui-form-pane" style="margin-top: 15px;">
-          <div class="layui-form-item">
-            <label class="layui-form-label">日期范围</label>
-            <div class="layui-input-inline">
-              <input class="layui-input" placeholder="开始日" id="LAY_demorange_s">
-            </div>
-            <div class="layui-input-inline">
-              <input class="layui-input" placeholder="截止日" id="LAY_demorange_e">
-            </div>
-            <div class="layui-input-inline">
-              <input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
-            </div>
-            <div class="layui-input-inline" style="width:80px">
-                <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
-            </div>
-          </div>
-        </div>
-    </form>
     <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','member-add.html','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：{{ count }} 条</span></xblock>
-     {% autopaginate zhudai_weekly_standard 10 %}
+     {% autopaginate danji_fumudai_weekly_standard 10 %}
     <table class="layui-table">
         <thead>
             <tr>
@@ -65,57 +46,45 @@
                     代次
                 </th>
                 <th>
-                    引种品种
-                </th>
-                <th>
-                    饲养方式
-                </th>
-                <th>
                     备注
                 </th>
             </tr>
         </thead>
         <tbody>
 
-        {% for index in zhudai_weekly_standard %}
+        {% for index in danji_fumudai_weekly_standard %}
             <tr>
                 <td >
-                    {{ index.0 }}
+                    {{ index.WeekNum }}
                 </td>
                 <td >
-                    {{ index.1 }}
+                    {{ index.siTaoRate }}
                 </td>
                 <td>
-                    {{ index.2 }}
+                    {{ index.ChanDanRate }}
                 </td>
                 <td>
-                    {{ index.3 }}
+                    {{ index.RuFuZhongDanRate }}
                 </td>
                 <td>
-                    {{ index.4 }}
+                    {{ index.ShouJingRate }}
                 </td>
                 <td>
-                    {{ index.5 }}
+                    {{ index.FuHuaRate }}
                 </td>
                 <td>
-                    {{ index.6 }}
+                    {{ index.JianChuRate }}
                 </td>
                 <td>
-                    {{ index.7 }}
+                    {{ index.SaleRate }}
                 </td>
                 <td class="td-status">
                     <span class="layui-btn layui-btn-normal layui-btn-mini">
-                        祖代
+                        父母代
                     </span>
                 </td>
                 <td>
-                    {{ index.9 }}
-                </td>
-                <td>
-                    {{ index.10 }}
-                </td>
-                <td>
-                    {{ index.11 }}
+                    {{ index.Remark }}
                 </td>
             </tr>
         {% endfor %}

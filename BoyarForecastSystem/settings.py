@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'huangji.apps.HuangjiConfig',
     'danji.apps.DanjiConfig',
     'dj_pagination',
-    'login.apps.LoginConfig'
+    'login.apps.LoginConfig',
+    'basic.apps.BasicConfig'
 ]
 
 
