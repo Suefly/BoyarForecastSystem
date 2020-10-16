@@ -1,13 +1,6 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.shortcuts import render
-
-# Create your views here.
-
-from django.shortcuts import render
-
-# Create your views here.
 
 from baiyu.views import *
 
@@ -26,6 +19,7 @@ def show_zWeekly_standard(request):
         'zhudai_weekly_standard':get_weekly_standard(bird_type,nGen)
     }
     return render(request,'danji_zWeeklyStandard.html',content)
+
 
 
 '''
